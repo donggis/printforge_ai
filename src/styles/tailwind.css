@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors */
+    --color-background: #F8F9FA; /* gray-50 */
+    --color-foreground: #111827; /* gray-900 */
+    --color-card: #FFFFFF; /* white */
+    --color-card-foreground: #111827; /* gray-900 */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #111827; /* gray-900 */
+    --color-muted: #F3F4F6; /* gray-100 */
+    --color-muted-foreground: #6B7280; /* gray-500 */
+    --color-border: #E5E7EB; /* gray-200 */
+    --color-input: #FFFFFF; /* white */
+    --color-ring: #3B82F6; /* blue-500 */
+
+    /* Brand Colors */
+    --color-primary: #3B82F6; /* blue-500 */
+    --color-primary-foreground: #FFFFFF; /* white */
+    --color-secondary: #6B7280; /* gray-500 */
+    --color-secondary-foreground: #FFFFFF; /* white */
+
+    /* Status Colors */
+    --color-success: #059669; /* emerald-600 */
+    --color-success-foreground: #FFFFFF; /* white */
+    --color-warning: #D97706; /* amber-600 */
+    --color-warning-foreground: #FFFFFF; /* white */
+    --color-error: #DC2626; /* red-600 */
+    --color-error-foreground: #FFFFFF; /* white */
+    --color-destructive: #DC2626; /* red-600 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+
+    /* Accent Colors */
+    --color-accent: #10B981; /* emerald-500 */
+    --color-accent-foreground: #FFFFFF; /* white */
+
+    /* Radius */
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+  }
+}
+
+@layer components {
+  .shadow-elevation-1 {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+
+  .shadow-elevation-2 {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  }
+
+  .shadow-elevation-3 {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .transition-micro {
+    transition: all 150ms ease-out;
+  }
+
+  .transition-layout {
+    transition: all 300ms ease-in-out;
+  }
+
+  .hover-scale {
+    transform: scale(1);
+    transition: transform 150ms ease-out;
+  }
+
+  .hover-scale:hover {
+    transform: scale(0.98);
+  }
+
+  .drag-zone {
+    @apply border-2 border-dashed border-gray-300 transition-colors duration-200;
+  }
+
+  .drag-zone:hover,
+  .drag-zone.drag-over {
+    @apply border-solid border-primary;
+  }
+}
