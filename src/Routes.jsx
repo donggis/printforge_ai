@@ -14,8 +14,10 @@ import ModelDownloadCenter from './pages/model-download-center';
 import AuthCallback from './pages/auth/callback';
 
 const Routes = () => {
+  const basename = import.meta.env.BASE_URL || '/';
+
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <ErrorBoundary>
         <AuthProvider>
           <ScrollToTop />
